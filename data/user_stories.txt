@@ -1,0 +1,10 @@
+As a trainer, I want my profile to list my upcoming classes and include a link to a detailed page so that prospective attendees can find my courses.
+As an admin, I want to control who accesses reports so that sensitive data is protected.
+As a user, I want to upload profile pictures so that others can recognize me.
+As a manager, I want the dashboard to update in real time so that decisions are based on current data.
+As a customer, I want the payment process to be fast and secure so that I feel confident using the app.
+As a reviewer, I want to be notified when comments are made so that I can respond promptly.
+As a mobile user, I want the UI to adapt to my screen size so that the experience is seamless.
+As a team leader, I want task history to be saved automatically so that we can track progress.
+As an analyst, I want to export reports in multiple formats so that they can be shared with stakeholders.
+As a tester, I want logs to be accessible and readable so that debugging is faster.
