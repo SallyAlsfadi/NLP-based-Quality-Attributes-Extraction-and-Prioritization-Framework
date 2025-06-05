@@ -35,3 +35,15 @@ def prioritize_by_role_weighted_frequency(story_tuples):
 
     # Sort by score
     return sorted(weighted_scores.items(), key=lambda x: x[1], reverse=True)
+
+def prioritize_by_cfv(attribute_counts, cfv_scores):
+    """
+    attribute_counts: dict of {attribute: count}
+    cfv_scores: dict of {attribute: cfv_score (e.g., 1-10 scale)}
+    """
+    cfv_priority = {}
+    for attr, freq in attribute_counts.items():
+        cfv = cfv_scores.get(attr, 1)  # default CFV = 1 if not specified
+        cfv_priority[attr] = freq * cfv
+
+    return sorted(cfv_priority.items(), key=lambda x: x[1], reverse=True)

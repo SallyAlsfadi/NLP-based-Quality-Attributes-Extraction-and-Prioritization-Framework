@@ -32,3 +32,28 @@ for story in stories:
 priorities = prioritize_by_role_weighted_frequency(story_tuples)
 for attr, score in priorities:
     print(f"{attr:<15} ➤ Score: {score}")
+
+print("\n🔷 PRIORITIZED QUALITY ATTRIBUTES (By Frequency × Criticality Factor Value):")
+# Define CFV scores (manually set by QA Manager or domain expert)
+cfv_scores = {
+    "security": 10,
+    "usability": 6,
+    "maintainability": 5,
+    "performance": 8,
+    "portability": 4
+}
+
+# Get frequency count
+attribute_counts = {}
+for story in stories:
+    for attr in extract_quality_attributes(story):
+        attribute_counts[attr] = attribute_counts.get(attr, 0) + 1
+
+# Get CFV-weighted priority
+from prioritizer import prioritize_by_cfv
+cfv_priorities = prioritize_by_cfv(attribute_counts, cfv_scores)
+
+# Print
+for attr, score in cfv_priorities:
+    print(f"{attr:<15} ➤ Score: {score} (CFV × Frequency)")
+
